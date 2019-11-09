@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+import pysftp
+def Main():
+    host = 'ip_address'
+    Username = 'username'
+    Password = 'Password'
+    with pysftp.Connection(host=host, username=Username, password=Password) as sftp:
+        print ("Baglanti basarili...")
+        ServerDosya_konum = '/Dosya_konumu' 
+
+        YerelIndirme_konum = './ındirilecek_dosya' #indirilecek dosyayi calistigimiz dizine indirmemiz icin.
+
+        sftp.get(ServerDosya_konum, YerelIndirme_konum) #Bu sayede dosyayi belirttigimiz alana indiririz.
+
+if __name__=='__main__':
+    Main()
